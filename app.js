@@ -9,9 +9,10 @@ var dataClients = {
         },
     ]
 };
-
+const valName = 'Donna Sloper';
+    console.log(valName);    
 const numTDC= "4571612553847958";
-    console.log(numTDC);
+    //console.log(numTDC);
 const monthData= parseInt("10");
 const yearData=  parseInt("17");
 const cvv= parseInt("270");
@@ -66,19 +67,28 @@ const luhn = (numeros) => {
         /*SUMA DEL ARRAY */
         sumTotalDigits += reverseNums[k]; 
     }
-    console.log(sumTotalDigits);
+    //console.log(sumTotalDigits);
 
     if (sumTotalDigits % 10 == 0){
-        console.log('TARJETA VALIDA');
+        //console.log('TARJETA VALIDA');
     }else{
-        console.log('TARJETA INVALIDA');
+        // console.log('TARJETA INVALIDA');
     }
       
 }
-creditCard(numTDC);
+//creditCard(numTDC);
 
-// const validateLetters = (letters) => {
-//     let name= 'Donna Sloper';
-
-//     const regex= /^[^a-zA-Z\ \.]$/;
-// }
+//***********************se inicia validación de nombre*******************//
+// const valName = 'Donna Sloper';
+const validateLetters = (name) => {
+        console.log(name);
+        
+    const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
+    if(regEx.exec(name) == null){
+        console.log('invalido');
+    } else {
+        console.log('valido');
+        
+    }
+}
+validateLetters(valName);
