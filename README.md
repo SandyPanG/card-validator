@@ -1,8 +1,8 @@
 # Validador de tarjeta de crédito
 
-* **Track:** _Common Core_
+* **Colaboradoras** _Claudia Trujillo, Sandra Pantoja_
 * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
+* **Unidad:** _Sprint 4_
 
 ***
 
@@ -20,6 +20,7 @@ El plugin debe recibir una referencia a un elemento del DOM que contenga
 
 
 Durante el proceso de validación, si los datos de la tarjeta son válidas el navegador mostrará mensaje **_"Tarjeta válida"_** a los datos que no pasen la validación, lanzará el mensaje **_"Tarjeta inválida"_**.
+El validador sólo acepta tarjetas Visa y Master Card; **Visa**, empiezan con número **4** y **MasterCard**, empieza con **5**.
 
 ## Instrucciones
 
@@ -37,6 +38,8 @@ Durante el proceso de validación, si los datos de la tarjeta son válidas el na
 5. En este punto si aparece en tu navegador el mensaje **_"Tarjeta válida"_** (corroborado con el             algoritmo de luhn) estás lista para realizar tu transacción; haz click en **_pagar_**.
 
 ## Demo
+
+![validador](assets/images/demo.gif)
 
 ## Ejemplo
 
