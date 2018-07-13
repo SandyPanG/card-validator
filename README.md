@@ -35,7 +35,7 @@ El validador sólo acepta tarjetas Visa y Master Card; **Visa**, empiezan con n�
     >⋅⋅1. En la primer casilla de verificación deberás ingresar dos dígitos del **_"01"_** al **_"12"_**
     >⋅⋅2. En la segunda casilla asegurate de no ingresar letras, cáracteres especiales ni espacios.
 4. El código de verificación deben ser tres dígitos, cuidando no ingresar letras, cáracteres especiales ni     espacios.Los dígitos verificadores o CVV, contemplan estos 3 números impresos en un recuadro blanco al     lado derecho del panel de firma o en el panel mismo.
-5. En este punto si aparece en tu navegador el mensaje **_"Tarjeta válida"_** (corroborado con el             algoritmo de luhn) estás lista para realizar tu transacción; haz click en **_pagar_**.
+5. En este punto si aparece en tu navegador el mensaje **_"Tarjeta válida"_** (corroborado con el algoritmo de luhn) estás lista para realizar tu transacción; haz click en **_pagar_**.
 
 ## Demo
 

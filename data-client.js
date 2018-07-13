@@ -1,6 +1,4 @@
-var dataClients = {
-
-    'clients': [
+var dataClients = [
         {
             'name': 'Erika Estrada',
             'numberCard': 4571612553847958,
@@ -37,5 +35,4 @@ var dataClients = {
             'cvv': 242,
         },
 
-    ]
-}
+    ];
