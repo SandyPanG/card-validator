@@ -62,7 +62,6 @@ const userName = (fullName) => {
     for (j; j < data.length; j += 1) {
             // console.log(j);
         if (data[j].name !== fullName) {
-            console.log('nombre NO encontrado');
             continue;
         }
         console.log((j) + ' nombre encontrado');
@@ -123,11 +122,11 @@ const luhn = (numeros) => {
     //console.log(sumTotalDigits);
 
     if (sumTotalDigits % 10 == 0) {
-        //console.log('TARJETA VALIDA');
+        console.log('TARJETA VALIDA');
     } else {
-        // console.log('TARJETA INVALIDA');
+        console.log('TARJETA INVALIDA');
     }
 
 }
-//creditCard(numTDC);
+creditCard(numTDC);
 
