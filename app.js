@@ -69,15 +69,16 @@ const userName = fullName => {
 
 /*************FUNCION PARA NUMERO************************/
 const userNumTDC = fullNumTDC => {
-    validateNumTDC (fullNumTDC);
 
-    let i = 0;
+    if (validateNumTDC(fullNumTDC)) {
+        let i = 0;
 
-    for (i; i < dataClients.length; i += 1) {
-        if (dataClients[i].numberCard !== fullNumTDC) {
-            continue;
-        }else if (dataClients[i].numberCard === fullNumTDC){
-        console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
+        for (i; i < dataClients.length; i += 1) {
+            if (dataClients[i].numberCard !== fullNumTDC) {
+                continue;
+            } else if (dataClients[i].numberCard === fullNumTDC) {
+                console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
+            }
         }
     }
 };
