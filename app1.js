@@ -42,7 +42,7 @@ const numTDC = '4043800134371178';
 const monthData = parseInt("10");
 const yearData = parseInt("17");
 const cvv = parseInt("270");
-
+const exp = monthData + "/" + yearData;
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateLetters = (name) => {
     const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
@@ -151,5 +151,17 @@ const cvvVal = (n) => {
     
 }
 cvvVal(cvv);
+
+/*****FUNCION PARA VALIDACIONES DEL AÑO DE EXPIRACIÓN DE LA TARJETA******/
+const expDate = (n) => {   
+    const datExpRegEx = /^(0[1-9]|1[0-2])\/?(20)?([0-9]{2})$/;
+    if (datExpRegEx.exec(n) == null) {
+        console.log('Fecha de expiración erronea');
+    } else {
+        console.log('Fecha de expiración válida');
+    }
+    
+}
+expDate(exp);
 
 
