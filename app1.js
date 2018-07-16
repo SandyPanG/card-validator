@@ -39,9 +39,9 @@ var dataClients = [
 
 const valName = 'Claudia Montserrat Torres';
 const numTDC = '4043800134371172';
-const monthData = "05";
-const yearData = "18";
-const cvv = parseInt("568");
+const monthData = '05';
+const yearData = '18';
+const cvv = '568';
 
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateLetters = (name) => {
@@ -181,33 +181,33 @@ const userDate = (n1,n2) => {
             continue;
         }  else {
             console.log('La fecha de expiración fue encontrada en la posicion '+ [j]);
-            // cvvVal(cvv);
+            cvvVal(cvv);
         }
     }
 }
 
 /****************FUNCION PARA VALIDACIONES: CVV***************/
-// const cvvVal = (n) => {   
-//     const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
-//     if (cvvRegEx.exec(n) == null) {
-//         console.log('número de seguridad inválido');
-//     } else {
-//         console.log('número de seguridad válido');
-//         userCvv(n);
-//     }  
-// }
+const cvvVal = (n) => {   
+    const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
+    if (cvvRegEx.exec(n) == null) {
+        console.log('número de seguridad inválido');
+    } else {
+        console.log('número de seguridad válido');
+        userCvv(n);
+    }  
+}
 
 // /*************FUNCION PARA CVV************************/
-// const userCvv = (cvvDigits) => {
-//     let j = 0;
+const userCvv = (cvvDigits) => {
+    let j = 0;
 
-//     for (j; j < dataClients.length; j += 1) {
-//         if (dataClients[j].cvv !== cvvDigits) {
-//             continue;
-//         }   
-//             console.log('El cvv fue encontrado en la posicion '+ [j]);
-//     }
-// }
+    for (j; j < dataClients.length; j += 1) {
+        if (dataClients[j].cvv !== cvvDigits) {
+            continue;
+        }   
+            console.log('El cvv fue encontrado en la posicion '+ [j]);
+    }
+}
 
 
 validateLetters(valName);
