@@ -2,37 +2,37 @@ var dataClients = [
     {
         'name': 'Erika Estrada Pacheco',
         'numberCard': '4571612553847958',
-        'month': 10,
-        'year': 17,
-        'cvv': 270,
+        'month': '10',
+        'year': '17',
+        'cvv': '270',
     },
     {
         'name': 'Israel Álvarez',
         'numberCard': '4065471966803600',
-        'month': 07,
-        'year': 16,
-        'cvv': 336,
+        'month': '07',
+        'year': '16',
+        'cvv': '336',
     },
     {
         'name': 'Claudia Montserrat Torres',
         'numberCard': '4043800134371172',
-        'month': "05",
-        'year': "18",
-        'cvv': 568,
+        'month': '05',
+        'year': '18',
+        'cvv': '568',
     },
     {
         'name': 'Carolina Valle Ruvalcaba',
         'numberCard': '4686008102429244',
-        'month': 10,
-        'year': 17,
-        'cvv': 895,
+        'month': '10',
+        'year': '17',
+        'cvv': '895',
     },
     {
         'name': 'Carmen Valencia Menchaca',
         'numberCard': '4530929310352951',
-        'month': 07,
-        'year': 17,
-        'cvv': 242,
+        'month': '07',
+        'year': '17',
+        'cvv': '242',
     },
 
 ];
@@ -41,16 +41,15 @@ const valName = 'Claudia Montserrat Torres';
 const numTDC = '4043800134371172';
 const monthData = "05";
 const yearData = "18";
-const cvv = parseInt("270");
-//const exp = monthData + "/" + yearData;
+const cvv = parseInt("568");
 
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateLetters = (name) => {
     const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
     if (regEx.exec(name) == null) {
-        console.log('nombre invalido');
+        console.log('NOMBRE INVALIDO');
     } else {
-        console.log('nombre valido');
+        console.log('NOMBRE VALIDO');
     }
     userName(name);
 }
@@ -79,11 +78,10 @@ const userNumTDC = (fullNumTDC) => {
             continue;
         }else{
         console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
-        
         }
     }
-    expDateMonth(monthData);
-    expDateYear(yearData);
+    
+    userDate(monthData,yearData);
 };
 
 
@@ -146,40 +144,44 @@ const validateNumTDCluhn = (numeros) => {
 /*****FUNCION PARA VALIDACIONES DEL MES DE EXPIRACIÓN DE LA TARJETA******/
 const expDateMonth = (n1) => {   
     const datExpRegEx = /^(0[0-9]|1[0-2])$/;
+    
     if (datExpRegEx.exec(n1) == null) {
-        console.log('Fecha de expiración erronea');
+        console.log('mes de expiración erronea');
+        return false;
     } else {
-        console.log('Fecha de expiración válida');
-        //userDate(n1);
-        expDateYear(yearData);
+        console.log('mes de expiración válida');
+        return true;
     }
-    return n1; 
 }
 
 /*****FUNCION PARA VALIDACIONES DEL AÑO DE EXPIRACIÓN DE LA TARJETA******/
-const expDateYear = (n2) => {   
+const expDateYear = (n2) => {
     const datExpRegEx = /^(20)?([0-9]{2})$/;
-    if (datExpRegEx.exec(n2) == null) {
-        console.log('Fecha de expiración erronea');
-    } else {
-        console.log('Fecha de expiración válida');
-        userDate(monthData, yearData);
 
+    if (datExpRegEx.exec(n2) == null) {
+        console.log('year de expiración erronea');
+        return false;
+    } else {
+        console.log('year de expiración válida');
+        return true;
     }
-    return n2;
 }
 
 
 /*************FUNCION PARA EXPDATE************************/
-const userDate = (month,year) => {
-    let j = 0;
+const userDate = (n1,n2) => {
+    expDateMonth(n1);
+    expDateYear(n2);
 
+    let j = 0;
+     
     for (j; j < dataClients.length; j += 1) {
-        if (dataClients[j].month !== month && dataClients[j].year !== year)  {
+        if (dataClients[j].month !== n1 || dataClients[j].year !== n2){
+            // console.log('La fecha no fue encontrada');
             continue;
-        }   else {
+        }  else {
             console.log('La fecha de expiración fue encontrada en la posicion '+ [j]);
-            // cvvVal(code);
+            // cvvVal(cvv);
         }
     }
 }
