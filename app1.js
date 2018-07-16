@@ -2,15 +2,15 @@ var dataClients = [
     {
         'name': 'Erika Estrada Pacheco',
         'numberCard': '4571612553847958',
-        'month-exp': 10,
-        'year-exp': 17,
+        'month-exp': (10,17),
+        // 'year-exp': 17,
         'cvv': 270,
     },
     {
         'name': 'Israel Álvarez',
         'numberCard': '4065471966803600',
-        'month-exp': 07,
-        'year-exp': 16,
+        'month-exp': (07,16),
+        // 'year-exp': 16,
         'cvv': 336,
     },
     {
@@ -39,10 +39,11 @@ var dataClients = [
 
 const valName = 'Claudia Montserrat Torres';
 const numTDC = '4043800134371178';
-const monthData = parseInt("10");
-const yearData = parseInt("17");
-const cvv = parseInt("270");
+const monthData = parseInt("20");
+const yearData = parseInt("3019");
+const cvv = parseInt("e33");
 const exp = monthData + "/" + yearData;
+
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateLetters = (name) => {
     const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;

@@ -38,10 +38,11 @@ var dataClients = [
 ];
 
 const valName = 'Claudia Montserrat Torres';
-const numTDC = '4043800134371172';
-const monthData = parseInt("10");
-const yearData = parseInt("17");
-const cvv = parseInt("270");
+const numTDC = '4043800134371178';
+const monthData = parseInt("20");
+const yearData = parseInt("3019");
+const cvv = parseInt("e33");
+const exp = monthData + "/" + yearData;
 
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateLetters = (name) => {
@@ -55,7 +56,7 @@ const validateLetters = (name) => {
 }
 
 /*************FUNCION PARA NAME************************/
-const userName = fullName => {
+const userName = (fullName) => {
     let j = 0;
 
     for (j; j < dataClients.length; j += 1) {
@@ -68,17 +69,16 @@ const userName = fullName => {
 }
 
 /*************FUNCION PARA NUMERO************************/
-const userNumTDC = fullNumTDC => {
+const userNumTDC = (fullNumTDC) => {
+    validateNumTDC (fullNumTDC);
 
-    if (validateNumTDC(fullNumTDC)) {
-        let i = 0;
+    let i = 0;
 
-        for (i; i < dataClients.length; i += 1) {
-            if (dataClients[i].numberCard !== fullNumTDC) {
-                continue;
-            } else if (dataClients[i].numberCard === fullNumTDC) {
-                console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
-            }
+    for (i; i < dataClients.length; i += 1) {
+        if (dataClients[i].numberCard !== fullNumTDC) {
+            continue;
+        }else if (dataClients[i].numberCard === fullNumTDC){
+        console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
         }
     }
 };
@@ -108,7 +108,7 @@ const validateNumTDC = nums => {
 
 
 /*COMIENZA FUNCION ALGORITMO LUHN: para corroborar validacion de TDC */
-const validateNumTDCluhn = numeros => {
+const validateNumTDCluhn = (numeros) => {
     let sumTotalDigits = 0;
     let reverseNums = numeros.reverse();
 
@@ -140,3 +140,29 @@ const validateNumTDCluhn = numeros => {
 }
 
 validateLetters(valName);
+
+/****************FUNCION PARA VALIDACIONES: CVV***************/
+const cvvVal = (n) => {   
+    const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
+    if (cvvRegEx.exec(n) == null) {
+        console.log('número de seguridad inválido');
+    } else {
+        console.log('número de seguridad válido');
+    }
+    
+}
+cvvVal(cvv);
+
+/*****FUNCION PARA VALIDACIONES DEL AÑO DE EXPIRACIÓN DE LA TARJETA******/
+const expDate = (n) => {   
+    const datExpRegEx = /^(0[1-9]|1[0-2])\/?(20)?([0-9]{2})$/;
+    if (datExpRegEx.exec(n) == null) {
+        console.log('Fecha de expiración erronea');
+    } else {
+        console.log('Fecha de expiración válida');
+    }
+    
+}
+expDate(exp);
+
+
