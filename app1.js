@@ -140,5 +140,16 @@ const validateNumTDCluhn = (numeros) => {
 
 validateLetters(valName);
 
+/****************FUNCION PARA VALIDACIONES: CVV***************/
+const cvvVal = (n) => {   
+    const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
+    if (cvvRegEx.exec(n) == null) {
+        console.log('número de seguridad inválido');
+    } else {
+        console.log('número de seguridad válido');
+    }
+    
+}
+cvvVal(cvv);
 
 
