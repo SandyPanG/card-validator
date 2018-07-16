@@ -61,27 +61,27 @@ const userName = (fullName) => {
     for (j; j < dataClients.length; j += 1) {
         if (dataClients[j].name !== fullName) {
             continue;
-        }   
-            console.log('El nombre fue encontrado en la posicion '+ [j]);
-            userNumTDC(numTDC);
+        }
+        console.log('El nombre fue encontrado en la posicion ' + [j]);
+        userNumTDC(numTDC);
     }
 }
 
 /*************FUNCION PARA NUMERO************************/
 const userNumTDC = (fullNumTDC) => {
-    validateNumTDC (fullNumTDC);
+    validateNumTDC(fullNumTDC);
 
     let i = 0;
 
     for (i; i < dataClients.length; i += 1) {
         if (dataClients[i].numberCard !== fullNumTDC) {
             continue;
-        }else{
-        console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
+        } else {
+            console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
         }
     }
-    
-    userDate(monthData,yearData);
+
+    userDate(monthData, yearData);
 };
 
 
@@ -142,9 +142,9 @@ const validateNumTDCluhn = (numeros) => {
 
 
 /*****FUNCION PARA VALIDACIONES DEL MES DE EXPIRACIÓN DE LA TARJETA******/
-const expDateMonth = (n1) => {   
+const expDateMonth = (n1) => {
     const datExpRegEx = /^(0[0-9]|1[0-2])$/;
-    
+
     if (datExpRegEx.exec(n1) == null) {
         console.log('mes de expiración erronea');
         return false;
@@ -169,32 +169,32 @@ const expDateYear = (n2) => {
 
 
 /*************FUNCION PARA EXPDATE************************/
-const userDate = (n1,n2) => {
+const userDate = (n1, n2) => {
     expDateMonth(n1);
     expDateYear(n2);
 
     let j = 0;
-     
+
     for (j; j < dataClients.length; j += 1) {
-        if (dataClients[j].month !== n1 || dataClients[j].year !== n2){
+        if (dataClients[j].month !== n1 || dataClients[j].year !== n2) {
             // console.log('La fecha no fue encontrada');
             continue;
-        }  else {
-            console.log('La fecha de expiración fue encontrada en la posicion '+ [j]);
+        } else {
+            console.log('La fecha de expiración fue encontrada en la posicion ' + [j]);
             cvvVal(cvv);
         }
     }
 }
 
 /****************FUNCION PARA VALIDACIONES: CVV***************/
-const cvvVal = (n) => {   
+const cvvVal = (n) => {
     const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
     if (cvvRegEx.exec(n) == null) {
         console.log('número de seguridad inválido');
     } else {
         console.log('número de seguridad válido');
         userCvv(n);
-    }  
+    }
 }
 
 // /*************FUNCION PARA CVV************************/
@@ -204,8 +204,8 @@ const userCvv = (cvvDigits) => {
     for (j; j < dataClients.length; j += 1) {
         if (dataClients[j].cvv !== cvvDigits) {
             continue;
-        }   
-            console.log('El cvv fue encontrado en la posicion '+ [j]);
+        }
+        console.log('El cvv fue encontrado en la posicion ' + [j]);
     }
 }
 
