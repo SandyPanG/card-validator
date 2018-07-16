@@ -26,16 +26,16 @@ El validador sólo acepta tarjetas Visa y Master Card; **Visa**, empiezan con n�
 
 1. Ingresa tu nombre completo tal como aparece en tu tarjeta de crédito. 
     >⋅⋅1. Acepta mayúsculas y minúsculas y espacios entre nombres.
-    >⋅⋅2. No acepta números ni carácteres especiales.
+    >⋅⋅2. No acepta números ni caracteres especiales.
 2. Ingresa el número de tarjeta de crédito, deberás verificar que 
   >⋅⋅1. Ingreses exactamente dieciséis dígitos.
    ⋅⋅2. Que no ingreses letras.
    ⋅⋅3. Que no ingreses espacios ni caracteres especiales.
-3. Ingresa la fecha de expiraciónde tu tarjeta de créditoLa fecha de vencimiento está impresa o grabada a     relieve.
-    >⋅⋅1. La primer casilla corresponde a la verificación de los meses del año, acepta que se ingresen solo dos dígitos del **_"01"_** al **_"12"_**, no acepta letras, caracteres especiales ni espacios
+3. Ingresa la fecha de expiración de tu tarjeta de crédito. La fecha de vencimiento está impresa o grabada a     relieve.
+    >⋅⋅1. La primer casilla corresponde a la verificación de los meses del año, acepta que se ingresen solo dos dígitos del **_"01"_** al **_"12"_**, no acepta letras, caracteres especiales ni espacios.
     >⋅⋅2. La segunda casilla corresponde a la verificación de los últimos dos dígitos del año de expiración, acepta número del **_15_** al **_23_**, no acepta que se ingresen letras, caracteres especiales ni espacios.
-4. El código de verificación deben ser tres dígitos, cuidando no ingresar letras, cáracteres especiales ni     espacios.Los dígitos verificadores o CVV, contemplan estos 3 números impresos en un recuadro blanco al     lado derecho del panel de firma o en el panel mismo.
-5. En este punto si aparece en tu navegador el mensaje **_"Tarjeta válida"_** (corroborado con el algoritmo de luhn) estás lista para realizar tu transacción; haz click en **_pagar_**.
+4. El código de verificación deben ser tres dígitos, cuidando no ingresar letras, caracteres especiales ni     espacios.Los dígitos verificadores o CVV, contemplan estos 3 números impresos en un recuadro blanco al     lado derecho del panel de firma o en el panel mismo.
+5. En este punto si aparece en tu navegador el mensaje **_"Tarjeta válida"_** (corroborado con el             algoritmo de luhn) estás lista para realizar tu transacción; haz click en **_pagar_**.
 
 ## Demo
 
