@@ -37,21 +37,21 @@ var dataClients = [
 
 ];
 
-const valName = 'Claudi Montserrat Torres';
+const valName = 'Claudia Montserrat Torres';
 const numTDC = '4043800134371172';
 const monthData = '05';
 const yearData = '18';
 const cvv = '568';
-
 
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
 const validateName = (name) => {
     const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
     if (regEx.exec(name) == null) {
         console.log('NOMBRE INVALIDO');
-    } 
+    } else {
         console.log('NOMBRE VALIDO');
-        return userName(name);
+        return userName(name);;
+    }
 }
 
 /*************FUNCION PARA NAME************************/
@@ -61,7 +61,6 @@ const userName = (fullName) => {
     for (j; j < dataClients.length; j += 1) {
         if (dataClients[j].name !== fullName) {
             continue;
-            return false;
         }
         console.log('El nombre fue encontrado en la posicion ' + [j]);
         return userNumTDC(numTDC);
@@ -77,11 +76,11 @@ const userNumTDC = (fullNumTDC) => {
     for (i; i < dataClients.length; i += 1) {
         if (dataClients[i].numberCard !== fullNumTDC) {
             continue;
-        } 
+        } else {
             console.log('En esta posicion la Tarjeta fue encontrada' + [i]);
             return userDate(monthData, yearData);
+        }
     }
-
 
 };
 
@@ -134,10 +133,10 @@ const validateNumTDCluhn = (numeros) => {
 
     if (sumTotalDigits % 10 == 0) {
         console.log('TARJETA VALIDA');
+
         return true;
     } else {
         console.log('TARJETA INVALIDA');
-        return false;
     }
 }
 
@@ -213,3 +212,4 @@ const userCvv = (cvvDigits) => {
 
 
 validateName(valName);
+console.log(validateName(valName));
