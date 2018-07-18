@@ -1,51 +1,7 @@
-var dataClients = [
-    {
-        'name': 'Erika Estrada Pacheco',
-        'numberCard': '4571612553847958',
-        'month': '10',
-        'year': '17',
-        'cvv': '270',
-    },
-    {
-        'name': 'Israel Álvarez',
-        'numberCard': '4065471966803600',
-        'month': '07',
-        'year': '16',
-        'cvv': '336',
-    },
-    {
-        'name': 'Claudia Montserrat Torres',
-        'numberCard': '4043800134371172',
-        'month': '05',
-        'year': '18',
-        'cvv': '568',
-    },
-    {
-        'name': 'Carolina Valle Ruvalcaba',
-        'numberCard': '4686008102429244',
-        'month': '10',
-        'year': '17',
-        'cvv': '895',
-    },
-    {
-        'name': 'Carmen Valencia Menchaca',
-        'numberCard': '4530929310352951',
-        'month': '07',
-        'year': '17',
-        'cvv': '242',
-    },
-
-];
-
-const valName = 'Claudi Montserrat Torres';
-const numTDC = '4043800134371172';
-const monthData = '05';
-const yearData = '18';
-const cvv = '568';
-
+import * as data from './data-client';
 
 /****************FUNCION PARA VALIDACIONES: NOMBRE***************/
-const validateName = (name) => {
+export const validateName = (name) => {
     const regEx = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
     if (regEx.exec(name) == null) {
         console.log('NOMBRE INVALIDO');
@@ -55,7 +11,7 @@ const validateName = (name) => {
 }
 
 /*************FUNCION PARA NAME************************/
-const userName = (fullName) => {
+export const userName = (fullName) => {
     let j = 0;
 
     for (j; j < dataClients.length; j += 1) {
@@ -69,7 +25,7 @@ const userName = (fullName) => {
 }
 
 /*************FUNCION PARA NUMERO************************/
-const userNumTDC = (fullNumTDC) => {
+export const userNumTDC = (fullNumTDC) => {
     validateNumTDC(fullNumTDC);
 
     let i = 0;
@@ -92,7 +48,7 @@ const userNumTDC = (fullNumTDC) => {
                                 4 == VISA
                                 5 == MASTERCARD
 */
-const validateNumTDC = nums => {
+export const validateNumTDC = nums => {
     /*Expresion regular que especifica que es lo que acepta */
     const regEx = /^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/;//EXPRESION REGULAR PARA TDC DE MASTERCARD-VISA-DISCORD
     if (regEx.exec(nums) == null) {
@@ -110,7 +66,7 @@ const validateNumTDC = nums => {
 
 
 /*COMIENZA FUNCION ALGORITMO LUHN: para corroborar validacion de TDC */
-const validateNumTDCluhn = (numeros) => {
+export const validateNumTDCluhn = (numeros) => {
     let sumTotalDigits = 0;
     let reverseNums = numeros.reverse();
 
@@ -143,7 +99,7 @@ const validateNumTDCluhn = (numeros) => {
 
 
 /*****FUNCION PARA VALIDACIONES DEL MES DE EXPIRACIÓN DE LA TARJETA******/
-const expDateMonth = (n1) => {
+export const expDateMonth = (n1) => {
     const datExpRegEx = /^(0[0-9]|1[0-2])$/;
 
     if (datExpRegEx.exec(n1) == null) {
@@ -156,7 +112,7 @@ const expDateMonth = (n1) => {
 }
 
 /*****FUNCION PARA VALIDACIONES DEL AÑO DE EXPIRACIÓN DE LA TARJETA******/
-const expDateYear = (n2) => {
+export const expDateYear = (n2) => {
     const datExpRegEx = /^(20)?([0-9]{2})$/;
 
     if (datExpRegEx.exec(n2) == null) {
@@ -170,7 +126,7 @@ const expDateYear = (n2) => {
 
 
 /*************FUNCION PARA EXPDATE************************/
-const userDate = (n1, n2) => {
+export const userDate = (n1, n2) => {
     expDateMonth(n1);
     expDateYear(n2);
 
@@ -188,7 +144,7 @@ const userDate = (n1, n2) => {
 }
 
 /****************FUNCION PARA VALIDACIONES: CVV***************/
-const cvvVal = (n) => {
+export const cvvVal = (n) => {
     const cvvRegEx = /^[0-9]{3}$/;///^d{2}$/;//(/\D/g, ""/);
     if (cvvRegEx.exec(n) == null) {
         console.log('número de seguridad inválido');
@@ -199,7 +155,7 @@ const cvvVal = (n) => {
 }
 
 // /*************FUNCION PARA CVV************************/
-const userCvv = (cvvDigits) => {
+export const userCvv = (cvvDigits) => {
     let j = 0;
 
     for (j; j < dataClients.length; j += 1) {
@@ -213,3 +169,4 @@ const userCvv = (cvvDigits) => {
 
 
 validateName(valName);
+console.log(validateName(valName));

@@ -1,4 +1,4 @@
-var dataClients = [
+export const dataClients = [
         {
             'name': 'Erika Estrada',
             'numberCard': 4571612553847958,
