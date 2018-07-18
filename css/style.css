@@ -7,7 +7,47 @@ body {
 }
 
 form {
-    
+    background: -webkit-radial-gradient(center, ellipse cover, #cedce7 0%,#596a72 100%); /* Chrome10-25,Safari5.1-6*/ 
+    border-radius: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
     position: relative;
     margin-left: 30%;
+    margin-top: 20%;
+    padding: 20px;
+    width: 40%;
 }
+
+label {
+    display: block;
+}
+
+input {
+    border-radius: 5px;
+    display: block;
+}
+
+.cards {
+    width: 10%;
+}
+
+.date {
+    display: inline-flex;
+}
+
+#expMonth, #expYear {
+    width: 4em;
+}
+
+#cvv {
+    width: 3em;
+}
+
+.cvv {
+    float: right;
+    width: 30%;
+}
+
+#button {
+    margin-left: 80%;
+}
+
